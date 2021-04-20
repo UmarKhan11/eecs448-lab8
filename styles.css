@@ -1,0 +1,45 @@
+* {
+    background-color: red;
+}
+
+.body {
+    margin: 100px 100px;
+}
+
+.content {
+    background-color: #F08080;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+h1, p {
+    text-align: center;
+    color: black;
+    background-color: #F08080;
+    font-family: arial;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+a, a > p {
+    background-color: #F08080;
+    color: blue;
+}
+
+a:hover, a > p:hover {
+    color: white;
+}
+
+h1 {
+    font-size: 22px;
+}
+
+.exer3Image, iframe {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.exer4p {
+    background-color: blue;
+}
