@@ -61,13 +61,13 @@
 		echo "<tr>";
 			echo "<td>Shipping</td>";
 			if ($s2 != 0) {
-				echo "<td>".$s2."</td>";
+				echo "<td>$".$s2."</td>";
 			}
 			else if ($s3 != 0) {
-				echo "<td>".$s3."</td>";
+				echo "<td>$".$s3."</td>";
 			}
 			else {
-				echo "<td>0</td>";
+				echo "<td>$0</td>";
 			}
 
 
