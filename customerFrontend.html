@@ -1,0 +1,64 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>INDEX</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="SitePoint">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <div class="content">
+        <form id="form" onsubmit="return validate()" action="customerBackend.php" method="post">
+            <h2>Login information</h2>
+            <p>Good: user@domain.com</p>
+            <p>Bad: bad@</p>
+            <div>
+                <label>Username</label>
+                <input type="text" placeholder="username" id="username" name="username">
+            </div>
+        </br>
+            <div>
+                <label>Password</label>
+                <input type="text" placeholder="password" id="password" name="password">
+            </div>
+        </br>
+            <div>
+                <h2>Items</h2>
+                <label>Waterbottle 1</label>
+                <input type="number" placeholder="Enter quantity" value="" id="q1" name="q1">
+		<p name="cost-1">$5.00</p>
+                <label>Waterbottle 2 (Cost: $10)</label>
+                <input type="number" placeholder="Enter quantity" value="" id="q2" name="q2">
+		<p name="cost-2">$10.00</p>
+                <label>Waterbottle 3 (Cost: $15)</label>
+                <input type="number" placeholder="Enter quantity" value="" id="q3" name="q3">
+            	<p name="cost-3">$15.00</p>	    </div>
+        </br>
+        <div>
+            <h2>Choose shipping options:</h2>
+            <input type="radio" id="s1" name="s1">
+            <label>Free 7 day</label>
+
+            <input type="radio" id="s2" name="s2">
+            <label>$50.00 over night</label>
+
+            <input type="radio" id="s3" name="s3">
+            <label>$5.00 three day</label>
+        </div>
+        </br>
+        <div>
+            <button type="reset">RESET</button>
+            <button type="submit">SUBMIT</button>
+        </div>
+        </form>
+    </div>
+    <script src="formChecker.js"></script>
+</body>
+
+</html>

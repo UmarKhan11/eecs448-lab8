@@ -43,3 +43,15 @@ h1 {
 .exer4p {
     background-color: blue;
 }
+
+form,
+form > h2,
+form > p,
+form > div > label,
+form > div,
+form > div,
+div > h2 {
+  background-color: #f08080;
+  text-align: center;
+}
+
