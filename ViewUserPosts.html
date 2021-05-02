@@ -1,0 +1,45 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Exercise 4: Administrator Homepage</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="SitePoint">
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <div class="content">
+        <form action="ViewUserPosts.php" method="post">
+            <select id="username" name="username">
+                <?php
+                    $mysqli = new mysqli("mysql.eecs.ku.edu", "umarkhan", "duk9Leba", "umarkhan");
+                    /* check connection */
+                    if ($mysqli->connect_errno) {
+                    printf("Connect failed: %s\n", $mysqli->connect_error);
+                    exit();
+                    }
+
+                    $query = "SELECT user_id FROM Users";
+
+                    if ($result = $mysqli->query($query)) {
+                        while ($row = $result->fetch_assoc()) {
+                            $username = $row["user_id"];
+                            echo "<option value=$username id=$username name=$username>".$username."</option>";
+                        }
+                        $result->free();
+                    }
+                ?>
+                </select>
+	  <button type="submit">SUBMIT</button>;
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

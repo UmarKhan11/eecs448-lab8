@@ -50,7 +50,11 @@ form > p,
 form > div > label,
 form > div,
 form > div,
-div > h2 {
+div > h2,
+form > label,
+.content > h1 > form,
+.content > h1 > form > label,
+.content > h1 > form > input  {
   background-color: #f08080;
   text-align: center;
 }

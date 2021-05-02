@@ -1,0 +1,64 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Exercise 4: Administrator Homepage</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="SitePoint">
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <div class="content">
+	<div class="del-cont">
+	<h4>Select checkbox to delete post</h4>
+        <form action="DeletePost.php" method="post">
+		<table>
+			<tr>
+				<th>Author_ID</th>
+				<th>Content</th>
+				<th>Delete?</th>
+			</tr>
+            <?php
+		$mysqli = new mysqli("mysql.eecs.ku.edu", "umarkhan", "duk9Leba", "umarkhan");
+		/* check connection */
+		if ($mysqli->connect_errno) {
+ 			printf("Connect failed: %s\n", $mysqli->connect_error);
+ 			exit();
+		}
+
+
+                $query = "SELECT author_id, content, post_id FROM Posts";
+
+                if ($result = $mysqli->query($query)) {
+                    while ($row = $result->fetch_assoc()) {
+                        $author_id = $row["author_id"];
+			$content = $row["content"];
+			$post_id = $row["post_id"];
+                        echo "<tr>";
+			    echo "<td>".$author_id."</td>";
+			    echo "<td>".$content."</td>";
+		            echo "<td><input type='checkbox' value=$post_id name='selected[]'></input></td>";
+                        echo "</tr>";
+                    }
+	 	    $result->free();
+                }
+		else {
+			echo "<tr>";
+				echo "<td>NOTHING</td>";
+			echo "</tr>";
+		}
+            ?>
+		</table>
+            <button type="submit">SUBMIT</button>
+	 </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
